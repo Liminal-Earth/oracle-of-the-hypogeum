@@ -15,11 +15,11 @@ const CardPlaceholder: React.FC<CardPlaceholderProps> = ({ className }) => {
       <div className="absolute inset-0 bg-white"></div>
       
       {/* Subtle pattern */}
-      <div className="absolute inset-0 bg-subtle-dots opacity-30"></div>
+      <div className="absolute inset-0 opacity-30"></div>
       
       {/* Sacred Geometry Pattern */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative w-4/5 h-4/5 animate-pulse-subtle">
+        <div className="relative w-4/5 h-4/5">
           <div className="absolute inset-0 border border-oracle-gold/40 rounded-full"></div>
           <div className="absolute inset-0 border border-oracle-gold/20 rounded-full transform rotate-45"></div>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -52,7 +52,7 @@ const CardPlaceholder: React.FC<CardPlaceholderProps> = ({ className }) => {
         <div className="text-oracle-gold text-xs">⚭</div>
       </div>
       
-      {/* Subtle call to action */}
+      {/* Draw card text */}
       <div className="absolute bottom-2 left-0 right-0 text-center">
         <span className="text-oracle-gray/60 text-[10px] uppercase tracking-widest">Draw Card</span>
       </div>
