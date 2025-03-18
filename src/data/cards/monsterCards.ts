@@ -8,7 +8,7 @@ export const monsterCards: OracleCard[] = [
     name: 'Gnew', 
     type: 'monster', 
     category: 'Monster',
-    description: 'Ruler of Smoke. Smoke not only obfuscates; it also makes breathing difficult. Gnew is an all-pervasive, general nastiness.',
+    description: 'Ruler of Smoke. Smoke not only obfuscates; it also makes breathing difficult. Gnew is an all-pervasive, general nastiness. Gnew can manifest physically, mentally, psychologically, or spiritually. Gnew is miasma-- the stifling, rotten atmosphere of a miserable autumn day.',
     imageUrl: '/images/oracleCards/monster-gnew-card.png',
     attributes: ['Wolf-headed']
   },
@@ -17,7 +17,7 @@ export const monsterCards: OracleCard[] = [
     name: 'Gneuth', 
     type: 'monster', 
     category: 'Monster',
-    description: 'Ruler of Stench. Stench of the kind represented by Gneuth is like just a tiny amount of dog poop on your shoe. You\'ll never find it, and nobody will point it out to you.',
+    description: 'Ruler of Stench. Stench of the kind represented by Gneuth is like just a tiny amount of dog poop on your shoe. You\'ll never find it, and nobody will point it out to you. If you do happen to find it, it\'ll be by accidentally getting some on you.',
     imageUrl: '/images/oracleCards/monster-gneuth-card.png',
     attributes: ['Sow-headed']
   },
@@ -35,7 +35,7 @@ export const monsterCards: OracleCard[] = [
     name: 'Wehneh', 
     type: 'monster', 
     category: 'Monster',
-    description: 'Ruler of Strife. Strife happens. Wehneh makes the strife within the querent\'s life more meaningful and significant. Wehneh also waits to feed off of the remains of whatever strife has caused.',
+    description: 'Ruler of Strife. Strife happens. Wehneh makes the strife within the querent\'s life more meaningful and significant. Wehneh also waits, vulture-like, to feed off of the remains of whatever strife has caused.',
     imageUrl: '/images/oracleCards/monster-wehneh-card.png',
     attributes: ['Hyena-headed']
   },
@@ -44,7 +44,7 @@ export const monsterCards: OracleCard[] = [
     name: 'Brekoax', 
     type: 'monster', 
     category: 'Monster',
-    description: 'Ruler of Spite. Spite directed at the querent doesn\'t have to have a reason. Brekoax revels in spite for spite\'s sake, and the querent shouldn\'t look for a \'reason\' for a bad situation.',
+    description: 'Ruler of Spite. Spite directed at the querent doesn\'t have to have a reason. Brekoax revels in spite for spite\'s sake, and the querent shouldn\'t look for a \'reason\' for a bad situation. Sometimes things just suck.',
     imageUrl: '/images/oracleCards/monster-brekoax-card.png', 
     attributes: ['Frog-headed']
   },
@@ -53,7 +53,7 @@ export const monsterCards: OracleCard[] = [
     name: 'Kehket', 
     type: 'monster', 
     category: 'Monster',
-    description: 'Ruler of Shame/Guilt. Shame and guilt are insinuated into the querent\'s by Kehket. This is one of the worst Monsters, as it can infect even positive experience.',
+    description: 'Ruler of Shame/Guilt. Shame and guilt are insinuated into the querent\'s psyche by Kehket. This is one of the worst Monsters, as it can infect even positive experience. It calls for a deep dive into the origin of the shame or guilt we feel, and for trying to reconcile our feelings to make sure they\'re not misplaced.',
     imageUrl: '/images/oracleCards/monster-kehket-card.png',
     attributes: ['Serpent-headed']
   },
