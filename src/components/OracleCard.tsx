@@ -22,11 +22,12 @@ const OracleCard: React.FC<OracleCardProps> = ({
   return (
     <div 
       className={cn(
-        "relative perspective-1000 w-52 h-72 cursor-pointer oracle-card",
-        disabled && "opacity-70 cursor-not-allowed",
+        "relative perspective-1000 w-52 h-72 oracle-card",
+        onClick && !disabled ? "cursor-pointer" : disabled ? "cursor-not-allowed" : "",
+        disabled && "opacity-70",
         className
       )}
-      onClick={!disabled ? onClick : undefined}
+      onClick={!disabled && onClick ? onClick : undefined}
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${flipped ? 'rotate-y-180' : ''}`}>
         <div className={`absolute w-full h-full rounded-lg shadow-gold-glow flex items-center justify-center backface-hidden ${flipped ? 'hidden' : ''}`}>

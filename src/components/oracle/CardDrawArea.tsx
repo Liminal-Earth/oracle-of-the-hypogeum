@@ -5,7 +5,6 @@ import OracleCardComponent from "@/components/OracleCard";
 import CardPlaceholder from "@/components/CardPlaceholder";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Info } from "lucide-react";
 
 interface ReadingCardState {
   card: OracleCard;
@@ -34,19 +33,9 @@ const CardDrawArea: React.FC<CardDrawAreaProps> = ({
               name={readingCard.card.name}
               image={readingCard.card.imageUrl} 
               flipped={readingCard.flipped}
-              disabled={true}
+              disabled={!readingCard.flipped}
+              onClick={readingCard.flipped ? () => setOpenDialogIndex(index) : undefined}
             />
-            {readingCard.flipped && (
-              <Button 
-                size="icon" 
-                variant="ghost" 
-                className="absolute top-2 right-2 h-8 w-8 rounded-full bg-black/10 hover:bg-black/20"
-                onClick={() => setOpenDialogIndex(index)}
-              >
-                <Info className="h-4 w-4" />
-                <span className="sr-only">Card Info</span>
-              </Button>
-            )}
 
             <Dialog open={openDialogIndex === index} onOpenChange={(open) => !open && setOpenDialogIndex(null)}>
               <DialogContent className="max-w-2xl">
