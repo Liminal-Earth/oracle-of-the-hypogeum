@@ -159,7 +159,12 @@ const OracleReading: React.FC = () => {
                         <span className="sr-only">Card Info</span>
                       </Button>
                     </HoverCardTrigger>
-                    <HoverCardContent className="w-80 p-4">
+                    <HoverCardContent 
+                      className="w-80 p-4 z-50" 
+                      side="top"
+                      align="center"
+                      sideOffset={10}
+                    >
                       <div className="space-y-2">
                         <h4 className="font-medium">{readingCard.card.name} - {readingCard.card.category}</h4>
                         <p className="text-sm text-muted-foreground">{readingCard.card.description}</p>
