@@ -77,6 +77,7 @@ const OracleCardLibrary: React.FC = () => {
                           flipped={true}
                           onClick={() => handleCardClick(card)}
                           className="w-36 h-52 sm:w-40 sm:h-56"
+                          hideLabel={true}
                         />
                         <p className="mt-2 text-center font-medium text-sm">{card.name}</p>
                       </div>
@@ -97,6 +98,7 @@ const OracleCardLibrary: React.FC = () => {
                     flipped={true}
                     onClick={() => handleCardClick(card)}
                     className="w-36 h-52 sm:w-40 sm:h-56"
+                    hideLabel={true}
                   />
                   <p className="mt-2 text-center font-medium text-sm">{card.name}</p>
                 </div>
@@ -114,6 +116,7 @@ const OracleCardLibrary: React.FC = () => {
                     flipped={true}
                     onClick={() => handleCardClick(card)}
                     className="w-36 h-52 sm:w-40 sm:h-56"
+                    hideLabel={true}
                   />
                   <p className="mt-2 text-center font-medium text-sm">{card.name}</p>
                 </div>
