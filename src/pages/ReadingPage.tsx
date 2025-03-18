@@ -14,7 +14,7 @@ const ReadingPage: React.FC = () => {
         
         <div className="max-w-4xl mx-auto mb-8 p-4">
           <p className="text-center mb-6">
-            Draw cards to create a divination map that reveals the currents influencing your situation.
+            Draw cards to reveal the currents influencing your situation.
           </p>
           <p className="text-center">
             Consult the Oracle of the Hypogeum. The ancients speak through these cards.

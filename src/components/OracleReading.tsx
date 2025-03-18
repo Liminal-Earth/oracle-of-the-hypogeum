@@ -4,8 +4,18 @@ import { Button } from "@/components/ui/button";
 import { allCards, shuffleCards, OracleCard } from "@/data/oracleData";
 import OracleCardComponent from "@/components/OracleCard";
 import CardPlaceholder from "@/components/CardPlaceholder";
-import { Shuffle, BookOpen } from "lucide-react";
+import { Shuffle, BookOpen, Info } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 interface ReadingCardState {
   card: OracleCard;
@@ -130,27 +140,43 @@ const OracleReading: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-6 mb-8">
           {reading.map((readingCard, index) => (
             <div key={index} className="card-appear" style={{ animationDelay: `${index * 0.2}s` }}>
-              <OracleCardComponent 
-                name={readingCard.card.name}
-                image={readingCard.card.imageUrl} 
-                flipped={readingCard.flipped}
-                disabled={true}
-              />
+              <div className="relative">
+                <OracleCardComponent 
+                  name={readingCard.card.name}
+                  image={readingCard.card.imageUrl} 
+                  flipped={readingCard.flipped}
+                  disabled={true}
+                />
+                {readingCard.flipped && (
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <Button 
+                        size="icon" 
+                        variant="ghost" 
+                        className="absolute top-2 right-2 h-8 w-8 rounded-full bg-black/10 hover:bg-black/20"
+                      >
+                        <Info className="h-4 w-4" />
+                        <span className="sr-only">Card Info</span>
+                      </Button>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-80 p-4">
+                      <div className="space-y-2">
+                        <h4 className="font-medium">{readingCard.card.name} - {readingCard.card.category}</h4>
+                        <p className="text-sm text-muted-foreground">{readingCard.card.description}</p>
+                        {readingCard.card.attributes && (
+                          <div className="mt-2">
+                            <span className="text-xs font-medium">Attributes: </span>
+                            <span className="text-xs">{readingCard.card.attributes.join(', ')}</span>
+                          </div>
+                        )}
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
+                )}
+              </div>
               <p className="mt-2 text-center font-medium">
                 {index === 0 ? 'Prevailing Current' : 'Underlying Current'}
               </p>
-              {readingCard.flipped && (
-                <div className="mt-3 p-3 bg-black/5 rounded-lg border border-oracle-gold/20">
-                  <h4 className="font-medium text-sm">{readingCard.card.name} - {readingCard.card.category}</h4>
-                  <p className="text-sm text-muted-foreground mt-1">{readingCard.card.description}</p>
-                  {readingCard.card.attributes && (
-                    <div className="mt-2">
-                      <span className="text-xs font-medium">Attributes: </span>
-                      <span className="text-xs">{readingCard.card.attributes.join(', ')}</span>
-                    </div>
-                  )}
-                </div>
-              )}
             </div>
           ))}
           
@@ -186,6 +212,27 @@ const OracleReading: React.FC = () => {
         <div className="mt-8 p-6 bg-muted/50 rounded-lg border border-border animate-appear-slide-up">
           <h3 className="text-xl font-serif text-oracle-mystical mb-3">Interpretation</h3>
           <p className="text-foreground leading-relaxed">{interpretation}</p>
+          
+          {/* Card details in the interpretation section */}
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {reading.map((readingCard, index) => (
+              <div key={index} className="p-4 bg-black/5 rounded-lg border border-oracle-gold/20">
+                <h4 className="font-medium text-sm flex items-center gap-2">
+                  {readingCard.card.name} - {readingCard.card.category}
+                  <span className="text-xs font-normal text-muted-foreground">
+                    {index === 0 ? '(Prevailing Current)' : '(Underlying Current)'}
+                  </span>
+                </h4>
+                <p className="text-sm text-muted-foreground mt-1">{readingCard.card.description}</p>
+                {readingCard.card.attributes && (
+                  <div className="mt-2">
+                    <span className="text-xs font-medium">Attributes: </span>
+                    <span className="text-xs">{readingCard.card.attributes.join(', ')}</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
