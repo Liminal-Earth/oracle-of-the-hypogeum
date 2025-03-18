@@ -9,6 +9,7 @@ interface OracleCardProps {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
+  hideLabel?: boolean;
 }
 
 const OracleCard: React.FC<OracleCardProps> = ({ 
@@ -17,7 +18,8 @@ const OracleCard: React.FC<OracleCardProps> = ({
   flipped = false, 
   onClick, 
   className,
-  disabled = false
+  disabled = false,
+  hideLabel = false
 }) => {
   return (
     <div 
@@ -70,9 +72,11 @@ const OracleCard: React.FC<OracleCardProps> = ({
             alt={name} 
             className="w-full h-full object-cover rounded-lg border-2 border-oracle-gold"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-2 rounded-b-lg">
-            <h3 className="text-center font-serif text-oracle-gold text-xs sm:text-sm truncate">{name}</h3>
-          </div>
+          {!hideLabel && (
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-2 rounded-b-lg">
+              <h3 className="text-center font-serif text-oracle-gold text-xs sm:text-sm truncate">{name}</h3>
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,16 +1,23 @@
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Library } from 'lucide-react';
-import { allCards, shuffleCards } from '@/data/oracleData';
+import { allCards, shuffleCards, OracleCard as CardType } from '@/data/oracleData';
 import OracleCard from '@/components/OracleCard';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 const HomePage: React.FC = () => {
   // Get 8 random cards from the deck on each page load
   const randomCards = useMemo(() => {
     return shuffleCards(allCards).slice(0, 8);
   }, []);
+  
+  const [selectedCard, setSelectedCard] = useState<CardType | null>(null);
+
+  const handleCardClick = (card: CardType) => {
+    setSelectedCard(card);
+  };
 
   return (
     <div className="min-h-screen">
@@ -52,16 +59,18 @@ const HomePage: React.FC = () => {
                 {randomCards.map((card, i) => (
                   <div 
                     key={card.id} 
-                    className="transform transition-transform duration-500 hover:scale-105"
+                    className="transform transition-transform duration-500 hover:scale-105 cursor-pointer"
                     style={{ 
                       transform: `rotate(${Math.random() * 6 - 3}deg)`,
                       animationDelay: `${i * 0.1}s`
                     }}
+                    onClick={() => handleCardClick(card)}
                   >
                     <OracleCard 
                       name={card.name}
                       image={card.imageUrl}
                       flipped={true}
+                      hideLabel={true}
                       className="w-16 h-24 sm:w-24 sm:h-32"
                     />
                   </div>
@@ -202,6 +211,53 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Card Information Dialog */}
+      <Dialog open={!!selectedCard} onOpenChange={(open) => !open && setSelectedCard(null)}>
+        <DialogContent className="max-w-2xl">
+          {selectedCard && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-serif text-oracle-mystical">{selectedCard.name}</DialogTitle>
+                <DialogDescription>
+                  {selectedCard.type === 'magician' && (
+                    <div className="text-sm font-medium text-accent-foreground mt-1">
+                      The {selectedCard.attributes?.join(' and ')} Magician
+                    </div>
+                  )}
+                  {selectedCard.type === 'monster' && (
+                    <div className="text-sm font-medium text-destructive mt-1">
+                      {selectedCard.attributes?.[0]} Monster
+                    </div>
+                  )}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                <div className="flex justify-center">
+                  <OracleCard 
+                    name={selectedCard.name}
+                    image={selectedCard.imageUrl}
+                    flipped={true}
+                    className="w-48 h-64 md:w-52 md:h-72"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-medium text-oracle-mystical mb-2">Description</h4>
+                  <p className="text-foreground">{selectedCard.description}</p>
+                  
+                  {selectedCard.type === 'entity' && (
+                    <div className="mt-4">
+                      <h4 className="font-medium text-oracle-mystical mb-2">Category</h4>
+                      <p>{selectedCard.category}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
