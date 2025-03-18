@@ -1,10 +1,17 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { BookOpen, Library } from 'lucide-react';
+import { allCards, shuffleCards } from '@/data/oracleData';
+import OracleCard from '@/components/OracleCard';
 
 const HomePage: React.FC = () => {
+  // Get 8 random cards from the deck on each page load
+  const randomCards = useMemo(() => {
+    return shuffleCards(allCards).slice(0, 8);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -42,15 +49,22 @@ const HomePage: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-oracle-stone/20 to-oracle-mystical/20 z-10"></div>
             <div className="absolute inset-0 flex items-center justify-center z-20">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 p-4">
-                {Array.from({ length: 8 }).map((_, i) => (
+                {randomCards.map((card, i) => (
                   <div 
-                    key={i} 
-                    className="w-16 h-24 sm:w-24 sm:h-32 rounded bg-gradient-to-br from-oracle-mystical to-oracle-shadow border border-oracle-gold/50"
+                    key={card.id} 
+                    className="transform transition-transform duration-500 hover:scale-105"
                     style={{ 
                       transform: `rotate(${Math.random() * 6 - 3}deg)`,
                       animationDelay: `${i * 0.1}s`
                     }}
-                  ></div>
+                  >
+                    <OracleCard 
+                      name={card.name}
+                      image={card.imageUrl}
+                      flipped={true}
+                      className="w-16 h-24 sm:w-24 sm:h-32"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
