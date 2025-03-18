@@ -10,15 +10,15 @@ const AboutSection: React.FC = () => {
           
           <div className="prose prose-slate max-w-none">
             <p>
-              The Oracle of the Hypogeum is a deck of 48 cards, each card based upon a sacred symbol from the Ancient Quatrian culture. The Quatrians used these symbols to help remythologize their landscapes, both internal and external.
+              The Oracle of the Hypogeum is a series of 48 symbols which originated in the Ancient Quatrian culture. The Quatrians used these symbols to help remythologize their landscapes, both internal and external. They were utilized for divination, but also as a symbolic alphabet which could be used to generate stories and mythic structures, rituals, and spells. 
             </p>
             
             <p>
-              Although specific traditions and customs varied from biome to biome, the ideas represented by these glyphs were universal. They could be found, individually or collectively, on everything from doorposts to road signs to tattoos. They were said to have been taught to humans by ANTHUOR, the Quatrian deer power, who communicated the symbols via shapes seen in the murmurations of starlings. The starlings took flight from within the Hypogeum, a mysterious stone chamber central to Quatrian myth.
+              Although specific traditions and customs varied from biome to biome, the ideas represented by these glyphs were universal. They could be found, individually or collectively, on everything from doorposts to road signs to tattoos. They were said to have been taught to humans by ANTHUOR, the Quatrian deer spirit, who communicated the symbols via shapes seen in the murmurations of starlings. The starlings took flight from within the Hypogeum, a mysterious stone chamber central to Quatrian myth.
             </p>
             
             <p>
-              As ubiquitous within Quatrian culture as corporate logos are in Late Capitalist neoliberalism, the primary use for the Symbols seems to have been a way to express meaning across a variety of cultural contexts. Just as someone living in Southeast Asia might recognize the "Golden Arches" as representative of McDonald's, so a Quatrian from a sub-polar settlement would understand that the symbol for "Life Force" (vimna) depicted a plant emerging from a seed.
+              As ubiquitous within Quatrian culture as corporate logos are in Late Capitalist neoliberalism, the primary use for the Symbols seems to have been a way to express meaning across a variety of cultural contexts. Just as someone living in Southeast Asia might recognize the "Golden Arches" as representative of McDonald's, so a Quatrian from a sub-polar settlement would understand that the symbol for "Life Force" depicted a plant emerging from a seed.
             </p>
             
             <h3 className="text-xl font-serif text-oracle-mystical mt-8 mb-4">A Different Conception of Time</h3>
