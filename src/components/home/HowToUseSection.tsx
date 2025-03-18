@@ -17,11 +17,11 @@ const HowToUseSection: React.FC = () => {
             </p>
             
             <p>
-              Readings using the Oracle are typically read using pairs of cards. The simplest reading (Short Reading) uses two cards. The deck is shuffled or 'flipped through' and two cards are drawn. The first card is the prevailing current, or most significant aspect of the reading, and the second card is the underlying current, or secondary aspect of the reading.
+              The simplest readings using the Oracle, like those provided here, are typically read using pairs of symbols. In physical card deck form, the deck is shuffled or 'flipped through' and two cards are drawn. The first card is the prevailing current, or most significant aspect of the reading, and the second card is the underlying current, or secondary aspect of the reading.
             </p>
             
             <p>
-              The reader then intuits the meaning of the reading based on her understanding of the situation, as well as the symbols on the cards. If she so desires, she can also ask follow-up questions using the same process.
+              The reader then intuits the meaning of the reading based on her understanding of the situation, as well as the symbols on the cards. If she so desires, she can also ask follow-up questions using the same process. Needless to say, the meanings of the symbols become clearer with practice, and someone experienced in interpreting them can provide insightful readings for others.
             </p>
             
             <h3 className="text-xl font-serif text-oracle-mystical mt-8 mb-4">Special Combinations</h3>
@@ -33,6 +33,7 @@ const HowToUseSection: React.FC = () => {
               <li>Two Monsters indicate a darker place in which the querent currently resides.</li>
               <li>ANTHUOR, as the One Who Withstands, always captures Monsters.</li>
               <li>THE VERNOW, as an Unpleasant Surprise, always evades Magicians.</li>
+              <li>MEMLEN are a scary mystery and drawing this symbol means the reading MUST be concluded IMMEDIATELY.</li>
             </ul>
           </div>
           
