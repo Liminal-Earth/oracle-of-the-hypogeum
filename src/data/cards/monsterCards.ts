@@ -45,7 +45,7 @@ export const monsterCards: OracleCard[] = [
     type: 'monster', 
     category: 'Monster',
     description: 'Ruler of Spite. Spite directed at the querent doesn\'t have to have a reason. Brekoax revels in spite for spite\'s sake, and the querent shouldn\'t look for a \'reason\' for a bad situation.',
-    imageUrl: '/images/oracleCards/monster-kekew-card.png', // Using kekew as brekoax image is not available
+    imageUrl: '/images/oracleCards/monster-brekoax-card.png', 
     attributes: ['Frog-headed']
   },
   { 
