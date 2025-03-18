@@ -1,6 +1,5 @@
-
-import React, { useState } from 'react';
-import { entityCards, magicianCards, monsterCards, OracleCard, CardCategory } from '@/data/oracleData';
+import React, { useState, useEffect } from 'react';
+import { entityCards, magicianCards, monsterCards, OracleCard, CardCategory, allCards } from '@/data/oracleData';
 import OracleCardComponent from '@/components/OracleCard';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -11,6 +10,31 @@ import { Input } from '@/components/ui/input';
 const OracleCardLibrary: React.FC = () => {
   const [selectedCard, setSelectedCard] = useState<OracleCard | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+  
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = allCards.map(card => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = card.imageUrl;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        setImagesPreloaded(true);
+        console.log('All card images preloaded successfully');
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setImagesPreloaded(true);
+      }
+    };
+    
+    preloadImages();
+  }, []);
   
   const filterCards = (cards: OracleCard[], term: string) => {
     if (!term) return cards;
@@ -41,6 +65,17 @@ const OracleCardLibrary: React.FC = () => {
   const handleCardClick = (card: OracleCard) => {
     setSelectedCard(card);
   };
+  
+  if (!imagesPreloaded) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 min-h-[500px] flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-oracle-mystical border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] mb-4"></div>
+          <p className="text-muted-foreground">Loading the Oracle cards...</p>
+        </div>
+      </div>
+    );
+  }
   
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -153,6 +188,7 @@ const OracleCardLibrary: React.FC = () => {
                     image={selectedCard.imageUrl}
                     flipped={true}
                     className="w-48 h-64 md:w-52 md:h-72"
+                    hideLabel={true}
                   />
                 </div>
                 <div>

@@ -1,5 +1,5 @@
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Library } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,6 +14,33 @@ const HeroSection: React.FC = () => {
   }, []);
   
   const [selectedCard, setSelectedCard] = useState<CardType | null>(null);
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+
+  // Preload images for the random cards shown on the homepage
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = randomCards.map(card => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = card.imageUrl;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        setImagesPreloaded(true);
+        console.log('Hero section card images preloaded successfully');
+      } catch (error) {
+        console.error('Error preloading hero images:', error);
+        // Still set to true so the UI doesn't get stuck
+        setImagesPreloaded(true);
+      }
+    };
+    
+    preloadImages();
+  }, [randomCards]);
 
   const handleCardClick = (card: CardType) => {
     setSelectedCard(card);
@@ -52,29 +79,39 @@ const HeroSection: React.FC = () => {
         
         <div className="relative w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-xl animate-float">
           <div className="absolute inset-0 bg-gradient-to-br from-oracle-stone/20 to-oracle-mystical/20 z-10"></div>
-          <div className="absolute inset-0 flex items-center justify-center z-20">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 p-4">
-              {randomCards.map((card, i) => (
-                <div 
-                  key={card.id} 
-                  className="transform transition-transform duration-500 hover:scale-105 cursor-pointer"
-                  style={{ 
-                    transform: `rotate(${Math.random() * 6 - 3}deg)`,
-                    animationDelay: `${i * 0.1}s`
-                  }}
-                  onClick={() => handleCardClick(card)}
-                >
-                  <OracleCard 
-                    name={card.name}
-                    image={card.imageUrl}
-                    flipped={true}
-                    hideLabel={true}
-                    className="w-16 h-24 sm:w-24 sm:h-32"
-                  />
-                </div>
-              ))}
+          
+          {!imagesPreloaded ? (
+            <div className="absolute inset-0 flex items-center justify-center z-20 bg-background/50">
+              <div className="text-center">
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-oracle-mystical border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] mb-4"></div>
+                <p className="text-muted-foreground">Summoning the Oracle cards...</p>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center z-20">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 p-4">
+                {randomCards.map((card, i) => (
+                  <div 
+                    key={card.id} 
+                    className="transform transition-transform duration-500 hover:scale-105 cursor-pointer"
+                    style={{ 
+                      transform: `rotate(${Math.random() * 6 - 3}deg)`,
+                      animationDelay: `${i * 0.1}s`
+                    }}
+                    onClick={() => handleCardClick(card)}
+                  >
+                    <OracleCard 
+                      name={card.name}
+                      image={card.imageUrl}
+                      flipped={true}
+                      hideLabel={true}
+                      className="w-16 h-24 sm:w-24 sm:h-32"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
 
