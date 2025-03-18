@@ -3,7 +3,7 @@ import React from 'react';
 import { OracleCard } from "@/data/oracleData";
 import OracleCardComponent from "@/components/OracleCard";
 import CardPlaceholder from "@/components/CardPlaceholder";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Info } from "lucide-react";
 
@@ -23,6 +23,8 @@ const CardDrawArea: React.FC<CardDrawAreaProps> = ({
   onDrawCard, 
   deckEmpty 
 }) => {
+  const [openDialogIndex, setOpenDialogIndex] = React.useState<number | null>(null);
+
   return (
     <div className="flex flex-wrap justify-center gap-6 mb-8">
       {reading.map((readingCard, index) => (
@@ -35,36 +37,67 @@ const CardDrawArea: React.FC<CardDrawAreaProps> = ({
               disabled={true}
             />
             {readingCard.flipped && (
-              <HoverCard>
-                <HoverCardTrigger asChild>
-                  <Button 
-                    size="icon" 
-                    variant="ghost" 
-                    className="absolute top-2 right-2 h-8 w-8 rounded-full bg-black/10 hover:bg-black/20"
-                  >
-                    <Info className="h-4 w-4" />
-                    <span className="sr-only">Card Info</span>
-                  </Button>
-                </HoverCardTrigger>
-                <HoverCardContent 
-                  className="w-80 p-4 z-50" 
-                  side="top"
-                  align="center"
-                  sideOffset={10}
-                >
-                  <div className="space-y-2">
-                    <h4 className="font-medium">{readingCard.card.name} - {readingCard.card.category}</h4>
-                    <p className="text-sm text-muted-foreground">{readingCard.card.description}</p>
-                    {readingCard.card.attributes && (
-                      <div className="mt-2">
-                        <span className="text-xs font-medium">Attributes: </span>
-                        <span className="text-xs">{readingCard.card.attributes.join(', ')}</span>
+              <Button 
+                size="icon" 
+                variant="ghost" 
+                className="absolute top-2 right-2 h-8 w-8 rounded-full bg-black/10 hover:bg-black/20"
+                onClick={() => setOpenDialogIndex(index)}
+              >
+                <Info className="h-4 w-4" />
+                <span className="sr-only">Card Info</span>
+              </Button>
+            )}
+
+            <Dialog open={openDialogIndex === index} onOpenChange={(open) => !open && setOpenDialogIndex(null)}>
+              <DialogContent className="max-w-2xl">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-serif text-oracle-mystical">{readingCard.card.name}</DialogTitle>
+                  <DialogDescription>
+                    {readingCard.card.type === 'magician' && (
+                      <div className="text-sm font-medium text-accent-foreground mt-1">
+                        The {readingCard.card.attributes?.join(' and ')} Magician
+                      </div>
+                    )}
+                    {readingCard.card.type === 'monster' && (
+                      <div className="text-sm font-medium text-destructive mt-1">
+                        {readingCard.card.attributes?.[0]} Monster
+                      </div>
+                    )}
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                  <div className="flex justify-center">
+                    <OracleCardComponent 
+                      name={readingCard.card.name}
+                      image={readingCard.card.imageUrl}
+                      flipped={true}
+                      className="w-48 h-64 md:w-52 md:h-72"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-oracle-mystical mb-2">Description</h4>
+                    <p className="text-foreground">{readingCard.card.description}</p>
+                    
+                    {readingCard.card.type === 'entity' && (
+                      <div className="mt-4">
+                        <h4 className="font-medium text-oracle-mystical mb-2">Category</h4>
+                        <p>{readingCard.card.category}</p>
                       </div>
                     )}
                   </div>
-                </HoverCardContent>
-              </HoverCard>
-            )}
+                </div>
+                
+                <div className="flex justify-end mt-4">
+                  <Button 
+                    onClick={() => setOpenDialogIndex(null)}
+                    variant="outline"
+                  >
+                    Close
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           <p className="mt-2 text-center font-medium">
             {index === 0 ? 'Prevailing Current' : 'Underlying Current'}
