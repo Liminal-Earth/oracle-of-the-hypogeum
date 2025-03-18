@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { allCards, shuffleCards, OracleCard } from "@/data/oracleData";
 import OracleCardComponent from "@/components/OracleCard";
+import CardPlaceholder from "@/components/CardPlaceholder";
 import { Shuffle, BookOpen } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -138,14 +139,24 @@ const OracleReading: React.FC = () => {
               <p className="mt-2 text-center font-medium">
                 {index === 0 ? 'Prevailing Current' : 'Underlying Current'}
               </p>
+              {readingCard.flipped && (
+                <div className="mt-3 p-3 bg-black/5 rounded-lg border border-oracle-gold/20">
+                  <h4 className="font-medium text-sm">{readingCard.card.name} - {readingCard.card.category}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{readingCard.card.description}</p>
+                  {readingCard.card.attributes && (
+                    <div className="mt-2">
+                      <span className="text-xs font-medium">Attributes: </span>
+                      <span className="text-xs">{readingCard.card.attributes.join(', ')}</span>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           ))}
           
           {reading.length < 2 && (
-            <div className="flex items-center justify-center w-52 h-72 border-2 border-dashed border-oracle-mystical/30 rounded-lg">
-              <p className="text-oracle-mystical/50 text-center">
-                {reading.length === 0 ? 'Draw First Card' : 'Draw Second Card'}
-              </p>
+            <div className="flex items-center justify-center w-52 h-72">
+              <CardPlaceholder onClick={drawCard} disabled={deck.length === 0 || reading.length >= 2} />
             </div>
           )}
         </div>

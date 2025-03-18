@@ -4,14 +4,20 @@ import { cn } from "@/lib/utils";
 
 interface CardPlaceholderProps {
   className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-const CardPlaceholder: React.FC<CardPlaceholderProps> = ({ className }) => {
+const CardPlaceholder: React.FC<CardPlaceholderProps> = ({ className, onClick, disabled = false }) => {
   return (
-    <div className={cn(
-      "relative w-full h-full rounded-lg border border-oracle-gold/30 overflow-hidden bg-white",
-      className
-    )}>
+    <div 
+      className={cn(
+        "relative w-52 h-72 rounded-lg border border-oracle-gold/30 overflow-hidden bg-white shadow-gold-glow cursor-pointer transition-all duration-300 hover:shadow-gold-glow-lg",
+        disabled && "opacity-70 cursor-not-allowed",
+        className
+      )}
+      onClick={!disabled ? onClick : undefined}
+    >
       <div className="absolute inset-0 bg-white"></div>
       
       {/* Subtle pattern */}
