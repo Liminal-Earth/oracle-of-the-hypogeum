@@ -31,7 +31,7 @@ const OracleCard: React.FC<OracleCardProps> = ({
     >
       <div className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${flipped ? 'rotate-y-180' : ''}`}>
         <div className={`absolute w-full h-full rounded-lg shadow-gold-glow flex items-center justify-center backface-hidden ${flipped ? 'hidden' : ''}`}>
-          <div className="card-back w-full h-full rounded-lg border-2 border-oracle-gold flex items-center justify-center">
+          <div className="card-back w-full h-full rounded-lg border-2 border-oracle-gold flex items-center justify-center bg-gradient-to-b from-black to-gray-900">
             {/* Sacred Geometry Pattern */}
             <div className="relative w-4/5 h-4/5 opacity-30">
               <div className="absolute inset-0 border border-oracle-gold rounded-full"></div>

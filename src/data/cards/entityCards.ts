@@ -1,4 +1,3 @@
-
 import { OracleCard } from "../types/oracleTypes";
 
 // Entity Cards Data
@@ -10,7 +9,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'Wild energy and potential, but the kind that the diviner has no control over. A system which persists in the face of great turmoil or trouble. The origin of a thing or situation. Amplifies the effect of other cards, except monsters, which are automatically negated by Anthuor.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/anthuorcard.png',
   },
   { 
     id: 'barbaro',
@@ -18,7 +17,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'Power, but powerful ambiguity. The end of a system, caused not by outright destruction, but by the inability of some party to act. A kind of temporal malleability.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/barbarocard.png',
   },
   { 
     id: 'acho',
@@ -26,7 +25,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'Stability. A firm foundation. Sentience within the inanimate.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/achocard.png',
   },
   { 
     id: 'the-maiden',
@@ -34,7 +33,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'Like Hermes, Messenger of the Gods, the Maiden acts as a conduit between the Hypogeum and "reality." And, like Artemis, the Maiden is both the act of questioning (hunting), and the results thereof (the hunted).',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/maidencard.png',
   },
   { 
     id: 'the-musician',
@@ -42,7 +41,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'A major change within the power of the querent to make.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/musiciancard.png',
   },
   { 
     id: 'the-vernow',
@@ -50,7 +49,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'Unexpected trouble. Worshiped as a deity by the Monsters. Automatically negates the magicians. Reverses the effect of other cards.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/vernowcard.png',
   },
   { 
     id: 'memlen',
@@ -58,7 +57,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Pre-Manifest Powers',
     description: 'The session must immediately be closed to avoid attracting the attention of unwanted negative energies and entities with questionable intent. A new session may be started at least one hour after the Memlen appear.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/memlencard.png',
   },
   
   // Places In Which Things Manifest
@@ -68,7 +67,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'Heaven. Wisdom to look for answers from ancestors. A perfected state. Completion.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/buorthcard.png',
   },
   { 
     id: 'sky',
@@ -76,7 +75,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'Moving from one world to the next. The ability to "unstick" oneself from a sticky situation. Moving house. Sustenance.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/skycard.png',
   },
   { 
     id: 'mountain',
@@ -84,7 +83,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'The most nakedly auspicious symbol as concerns wealth, wellness, the body, etc. An increase in the flow of positive energies into the querent\'s life.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/mountaincard.png',
   },
   { 
     id: 'forest',
@@ -92,7 +91,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'Growth. Community. Interdependence.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/forestcard.png',
   },
   { 
     id: 'plain',
@@ -100,7 +99,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'Exposure. Monotony that one can escape by viewing the details.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/plaincard.png',
   },
   { 
     id: 'cave',
@@ -108,7 +107,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Places In Which Things Manifest',
     description: 'Going deep, into places not usually visited, that become sanctuaries. Ancestral contributions that require thought to unravel. Safety, unless a bear\'s in there. Sometimes a literal cave.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/cavecard.png',
   },
   
   // Entities That Manifest
@@ -118,7 +117,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'The querent, specifically. Home, community. A default state.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/humancard.png',
   },
   { 
     id: 'animal',
@@ -126,7 +125,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'Something obvious.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/animalcard.png',
   },
   { 
     id: 'plant',
@@ -134,7 +133,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'Knowledge hidden in plain sight. A slow, contemplative process with big rewards.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/plantcard.png',
   },
   { 
     id: 'fungus',
@@ -142,7 +141,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'A vast network underneath something mundane. The visible aspects can be toxic, delicious, or enlightening. Communication across a long distance, either space or time.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/fungicard.png',
   },
   { 
     id: 'insect',
@@ -150,7 +149,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'Small, considered motions that don\'t waste energy. Small changes at the onset gradually turning into huge changes. A tiny representative of a large force that could easily destroy the planet if they could only get organized.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/insectcard.png',
   },
   { 
     id: 'animalcule',
@@ -158,7 +157,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Entities That Manifest',
     description: 'Raw, unfettered magic. A minuscule change without which a system would collapse. Transformation/inner alchemy.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/animalculecard.png',
   },
   
   // Forms In Which Things Manifest
@@ -168,7 +167,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'The root of Fire. Passion. Meaning depends on card context.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/firecard.png',
   },
   { 
     id: 'air',
@@ -176,7 +175,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'The root of Air. Intellect. Meaning depends on card context.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/aircard.png',
   },
   { 
     id: 'water',
@@ -184,7 +183,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'The root of Water. Emotion. Meaning depends on card context.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/watercard.png',
   },
   { 
     id: 'earth',
@@ -192,7 +191,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'The root of Earth. Physicality. Meaning depends on card context.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/soilcard.png',
   },
   { 
     id: 'life-force',
@@ -200,7 +199,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'Inner vitality/strength. A shared power. Art. Something available to all. Health, wellness.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/lifeforcecard.png',
   },
   { 
     id: 'light',
@@ -208,7 +207,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'Purifying exposure. An ultimate energy transferred from the sun, through a plant, into a person. A directed source of inspiration (i.e. from something external acting as a spotlight).',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/lightcard.png',
   },
   { 
     id: 'shadow',
@@ -216,7 +215,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'Forms In Which Things Manifest',
     description: 'Darkness for sun lovers, but cool shade for those who thrive in it.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/shadowcard.png',
   },
   
   // The Mysteries of Manifestation
@@ -226,7 +225,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'An initiation. Confronting one\'s darkness in order to understand life and death. Descending into the Hypogeum via the Imaginal Realm and finding an answer.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/mysterycard.png',
   },
   { 
     id: 'silence',
@@ -234,7 +233,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'Silence.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/silencecard.png',
   },
   { 
     id: 'time-hunter',
@@ -242,7 +241,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'Something from the querent\'s past—or future!—manifests. At the most mundane level, bureaucracy.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/timehuntercard.png',
   },
   { 
     id: 'golden-egg',
@@ -250,7 +249,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'A gift given by the final survivors of an ancient culture. Something valuable found in the wilderness. The Golden Gift of the Sasquatch. A double-yolked egg.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/eggcard.png',
   },
   { 
     id: 'wormwood',
@@ -258,7 +257,7 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'A resetting of the landscape. Digging up the garden at the end of the season. Destruction, but in order to restore.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/wormwoodcard.png',
   },
   { 
     id: 'the-stone-book',
@@ -266,6 +265,6 @@ export const entityCards: OracleCard[] = [
     type: 'entity', 
     category: 'The Mysteries of Manifestation',
     description: 'A new story. A shift of the timeline. Reshuffle the deck and begin a new reading.',
-    imageUrl: '/card-placeholder.png',
+    imageUrl: '/images/oracleCards/stonebookcard.png',
   }
 ];
