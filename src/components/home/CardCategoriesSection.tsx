@@ -12,7 +12,7 @@ const CardCategoriesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="h-24 bg-gradient-to-r from-oracle-mystical to-oracle-shadow flex items-center justify-center">
-              <h3 className="text-xl font-serif text-white">32 Entity Cards</h3>
+              <h3 className="text-xl font-serif text-black">32 Entity Cards</h3>
             </div>
             <div className="p-6">
               <p className="text-muted-foreground mb-4">
@@ -26,7 +26,7 @@ const CardCategoriesSection: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="h-24 bg-gradient-to-r from-oracle-moss to-oracle-earth flex items-center justify-center">
-              <h3 className="text-xl font-serif text-white">8 Magicians</h3>
+              <h3 className="text-xl font-serif text-black">8 Magicians</h3>
             </div>
             <div className="p-6">
               <p className="text-muted-foreground mb-4">
@@ -40,7 +40,7 @@ const CardCategoriesSection: React.FC = () => {
           
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="h-24 bg-gradient-to-r from-oracle-shadow to-black flex items-center justify-center">
-              <h3 className="text-xl font-serif text-white">8 Monsters</h3>
+              <h3 className="text-xl font-serif text-black">8 Monsters</h3>
             </div>
             <div className="p-6">
               <p className="text-muted-foreground mb-4">
