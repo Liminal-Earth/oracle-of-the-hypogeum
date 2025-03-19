@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
         
-        <div className="relative w-full max-w-4xl aspect-[2/1] sm:aspect-video rounded-lg overflow-hidden shadow-xl animate-float">
+        <div className="relative w-full max-w-5xl aspect-[2/1] sm:aspect-video rounded-lg overflow-hidden shadow-xl animate-float">
           <div className="absolute inset-0 bg-gradient-to-br from-oracle-stone/20 to-oracle-mystical/20 z-10"></div>
           
           {!imagesPreloaded ? (
@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
             </div>
           ) : (
             <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="grid grid-cols-4 gap-1 md:gap-4 p-2 md:p-4">
+              <div className="grid grid-cols-4 gap-2 md:gap-6 p-3 md:p-6">
                 {randomCards.map((card, i) => (
                   <div 
                     key={card.id} 
@@ -105,7 +105,7 @@ const HeroSection: React.FC = () => {
                       image={card.imageUrl}
                       flipped={true}
                       hideLabel={true}
-                      className="w-14 h-20 sm:w-24 sm:h-32"
+                      className="w-20 h-28 sm:w-28 sm:h-40 md:w-32 md:h-44"
                     />
                   </div>
                 ))}
