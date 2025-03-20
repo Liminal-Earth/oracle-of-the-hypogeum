@@ -30,7 +30,7 @@ const HowToUseSection: React.FC = () => {
             <ul>
               <li>If a Magician is drawn as the prevailing current and a Monster for the underlying current, the Monster has been "Captured," or Defeated, by the Magician, and the reading is favorable.</li>
               <br/>
-              <li>If a Monster is prevailing and a Magician is underlying, the Monster has evaded capture and the Magician in question must be removed from the deck for the remainder of the session (if multiple reads are desired).</li>
+              <li>If a Monster is prevailing and a Magician is underlying, the Monster has evaded capture and the Magician in question has been defeated. The reading is unfavorable.</li>
               <br/>
               <li>Two Magicians work together to bring harmony to the querent.Always favorable. </li>
               <br/>
