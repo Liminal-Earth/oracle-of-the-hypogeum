@@ -28,12 +28,18 @@ const HowToUseSection: React.FC = () => {
             
             <ul>
               <li>If a Magician is drawn as the prevailing current and a Monster for the underlying current, the Monster has been "Captured," or Defeated, by the Magician, and the reading is favorable.</li>
-              <li>If a Monster is prevailing, it has evaded capture and the Magician in question must be removed from the deck for the remainder of the session.</li>
-              <li>Two Magicians work together to bring harmony to the querent.</li>
-              <li>Two Monsters indicate a darker place in which the querent currently resides.</li>
-              <li>ANTHUOR, as the One Who Withstands, always captures Monsters.</li>
-              <li>THE VERNOW, as an Unpleasant Surprise, always evades Magicians.</li>
-              <li>MEMLEN are a scary mystery and drawing this symbol means the reading MUST be concluded IMMEDIATELY.</li>
+              <p></p>
+              <li>If a Monster is prevailing and a Magician is underlying, the Monster has evaded capture and the Magician in question must be removed from the deck for the remainder of the session (if multiple reads are desired).</li>
+              <p></p>
+              <li>Two Magicians work together to bring harmony to the querent.Always favorable. </li>
+              <p></p>
+              <li>Two Monsters indicate a darker place in which the querent currently resides. Always unfavorable.</li>
+              <p></p>
+              <li>ANTHUOR and a Monster: ANTHUOR, as the One Who Withstands, always captures Monsters, regardless of whether they are prevailing or underlying.</li>
+              <p></p>
+              <li>THE VERNOW and a Magician: THE VERNOW, as an Unpleasant Surprise, always evades Magicians, regardless of whether they are prevailing or underlying.</li>
+              <p></p>
+              <li>MEMLEN are a scary mystery and drawing this symbol means the reading MUST be concluded IMMEDIATELY. The diviner must wait at least an hour before attempting another reading.</li>
             </ul>
           </div>
           
