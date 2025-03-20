@@ -19,7 +19,8 @@ const HowToUseSection: React.FC = () => {
             <p>
               The simplest readings using the Oracle, like those provided here, are typically read using pairs of symbols. In physical card deck form, the deck is shuffled or 'flipped through' and two cards are drawn. The first card is the prevailing current, or most significant aspect of the reading, and the second card is the underlying current, or secondary aspect of the reading.
             </p>
-            
+                          <br/>
+
             <p>
               The reader then intuits the meaning of the reading based on her understanding of the situation, as well as the symbols on the cards. If she so desires, she can also ask follow-up questions using the same process. Needless to say, the meanings of the symbols become clearer with practice, and someone experienced in interpreting them can provide insightful readings for others.
             </p>
@@ -28,17 +29,17 @@ const HowToUseSection: React.FC = () => {
             
             <ul>
               <li>If a Magician is drawn as the prevailing current and a Monster for the underlying current, the Monster has been "Captured," or Defeated, by the Magician, and the reading is favorable.</li>
-              <p></p>
+              <br/>
               <li>If a Monster is prevailing and a Magician is underlying, the Monster has evaded capture and the Magician in question must be removed from the deck for the remainder of the session (if multiple reads are desired).</li>
-              <p></p>
+              <br/>
               <li>Two Magicians work together to bring harmony to the querent.Always favorable. </li>
-              <p></p>
+              <br/>
               <li>Two Monsters indicate a darker place in which the querent currently resides. Always unfavorable.</li>
-              <p></p>
+              <br/>
               <li>ANTHUOR and a Monster: ANTHUOR, as the One Who Withstands, always captures Monsters, regardless of whether they are prevailing or underlying.</li>
-              <p></p>
+              <br/>
               <li>THE VERNOW and a Magician: THE VERNOW, as an Unpleasant Surprise, always evades Magicians, regardless of whether they are prevailing or underlying.</li>
-              <p></p>
+              <br/>
               <li>MEMLEN are a scary mystery and drawing this symbol means the reading MUST be concluded IMMEDIATELY. The diviner must wait at least an hour before attempting another reading.</li>
             </ul>
           </div>
