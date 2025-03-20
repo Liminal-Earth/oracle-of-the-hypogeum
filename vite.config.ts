@@ -20,18 +20,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Simple base path for standard web hosting
   base: '/',
   build: {
-    // Add source maps for better debugging
     sourcemap: true,
-    // Use ES module format which has better browser support
     target: 'esnext',
-    // Output files with correct extensions for standard web hosting
-    rollupOptions: {
-      output: {
-        manualChunks: undefined
-      }
-    }
   }
 }));
