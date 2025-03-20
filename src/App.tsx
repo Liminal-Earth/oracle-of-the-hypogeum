@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CardsPage from "./pages/CardsPage";
 import ReadingPage from "./pages/ReadingPage";
+import Index from "./pages/Index";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/index" element={<Index />} />
               <Route path="/cards" element={<CardsPage />} />
               <Route path="/reading" element={<ReadingPage />} />
               <Route path="*" element={<NotFound />} />

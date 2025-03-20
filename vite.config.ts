@@ -20,20 +20,17 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // Use correct base setting for GitHub Pages with custom domain
+  // Simple base path for standard web hosting
   base: '/',
   build: {
     // Add source maps for better debugging
     sourcemap: true,
     // Use ES module format which has better browser support
     target: 'esnext',
-    // Ensure output files have correct extensions and formats
+    // Output files with correct extensions for standard web hosting
     rollupOptions: {
       output: {
-        manualChunks: undefined,
-        entryFileNames: 'assets/[name].[hash].js',
-        chunkFileNames: 'assets/[name].[hash].js',
-        assetFileNames: 'assets/[name].[hash].[ext]'
+        manualChunks: undefined
       }
     }
   }
