@@ -20,6 +20,21 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  // For GitHub Pages with custom domain, we can use '/' as base
+  // Use correct base setting for GitHub Pages with custom domain
   base: '/',
+  build: {
+    // Add source maps for better debugging
+    sourcemap: true,
+    // Use ES module format which has better browser support
+    target: 'esnext',
+    // Ensure output files have correct extensions and formats
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
+  }
 }));
