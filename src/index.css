@@ -99,13 +99,13 @@
   }
   
   ::-webkit-scrollbar-track {
-    background: white;
+    background: #f8f6f0;
     border: 1px solid rgba(212, 175, 55, 0.1);
   }
   
   ::-webkit-scrollbar-thumb {
     background: rgba(212, 175, 55, 0.3);
-    border: 2px solid white;
+    border: 2px solid #f8f6f0;
   }
 }
 
