@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
           </Button>
         </div>
         
-        <div className="relative w-full max-w-5xl aspect-[2/1] sm:aspect-video rounded-lg overflow-hidden shadow-xl animate-float">
+        <div className="relative w-full max-w-5xl aspect-[2/1.5] xs:aspect-[2/1.2] sm:aspect-video rounded-lg overflow-hidden shadow-xl animate-float">
           <div className="absolute inset-0 bg-gradient-to-br from-oracle-stone/20 to-oracle-mystical/20 z-10"></div>
           
           {!imagesPreloaded ? (
